@@ -80,6 +80,8 @@ for BAM in ${BAMS[@]}; do
   samtools index $BAM
   done
   
+#remove genome* and results* files
+  
   ####################
 ## Count Features ##
 ####################
