@@ -1,0 +1,12 @@
+Open R studio on ThinLinc
+Using Console, load tidyverse
+
+library(“tidyverse”)
+
+In console
+library ("DESeq2")
+
+countdata <- read.table("/N/slate/emierdma/GSF2848/results/counts/counts.tsv", header=TRUE,row.names = 1)
+
+countdata <- countdata[,6:ncol(countdata)]
+
