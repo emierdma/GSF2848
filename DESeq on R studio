@@ -1,12 +1,35 @@
-Open R studio on ThinLinc
-Using Console, load tidyverse
+# Open R studio on ThinLinc
+# Using Console, load tidyverse
 
 library(“tidyverse”)
 
-In console
+# In console
 library ("DESeq2")
 
 countdata <- read.table("/N/slate/emierdma/GSF2848/results/counts/counts.tsv", header=TRUE,row.names = 1)
 
 countdata <- countdata[,6:ncol(countdata)]
 
+colnames(countdata)
+
+# Change column names
+
+colnames(countdata) <- gsub("..results.aligned.GSF2848.EE.","",colnames(countdata))
+
+colnames(countdata) <- gsub("_R1_001_Aligned.sortedByCoord.out.bam","",colnames(countdata))
+
+colnames(countdata) <- gsub("N2.rep3_S13","N2.rep3",colnames(countdata))
+
+colnames(countdata) <- gsub("adr.2.rep1_S14","adr2.rep1",colnames(countdata))
+
+colnames(countdata) <- gsub("adr.2.rep2_S15","adr2.rep2",colnames(countdata))
+
+colnames(countdata) <- gsub("N2.rep2_S12","N2.rep2",colnames(countdata))
+
+colnames(countdata) <- gsub("adr.2.rep3_S16","adr2.rep3",colnames(countdata))
+
+colnames(countdata) <- gsub("N2.rep1_S11","N2.rep1",colnames(countdata))
+
+colnames(countdata)
+
+countdata <- as.matrix(countdata)
