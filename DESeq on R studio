@@ -18,18 +18,40 @@ colnames(countdata) <- gsub("..results.aligned.GSF2848.EE.","",colnames(countdat
 
 colnames(countdata) <- gsub("_R1_001_Aligned.sortedByCoord.out.bam","",colnames(countdata))
 
-colnames(countdata) <- gsub("N2.rep3_S13","N2.rep3",colnames(countdata))
+colnames(countdata) <- gsub("N2.rep3_S13","N2rep3",colnames(countdata))
 
-colnames(countdata) <- gsub("adr.2.rep1_S14","adr2.rep1",colnames(countdata))
+colnames(countdata) <- gsub("adr.2.rep1_S14","adr2rep1",colnames(countdata))
 
-colnames(countdata) <- gsub("adr.2.rep2_S15","adr2.rep2",colnames(countdata))
+colnames(countdata) <- gsub("adr.2.rep2_S15","adr2rep2",colnames(countdata))
 
-colnames(countdata) <- gsub("N2.rep2_S12","N2.rep2",colnames(countdata))
+colnames(countdata) <- gsub("N2.rep2_S12","N2rep2",colnames(countdata))
 
-colnames(countdata) <- gsub("adr.2.rep3_S16","adr2.rep3",colnames(countdata))
+colnames(countdata) <- gsub("adr.2.rep3_S16","adr2rep3",colnames(countdata))
 
-colnames(countdata) <- gsub("N2.rep1_S11","N2.rep1",colnames(countdata))
+colnames(countdata) <- gsub("N2.rep1_S11","N2rep1",colnames(countdata))
 
 colnames(countdata)
 
 countdata <- as.matrix(countdata)
+
+countdata <- countdata[,c("adr2rep1","adr2rep2","adr2rep3","N2rep1","N2rep2","N2rep3")]
+
+(condition <- factor(c(rep("b",3),rep("a",3))))
+
+(coldata <- data.frame(row.names=colnames(countdata),condition))
+
+dds <- DESeqDataSetFromMatrix(countData = countdata,colData = coldata, design=~condition)
+
+keep = rowSums(counts(dds)) >= 1
+
+dds <- dds[keep,]
+
+dds <- DESeq(dds)
+
+res <- results(dds)
+
+resdata <- merge(as.data.frame(res),as.data.frame(counts(dds,normalized=TRUE)),by="row.names",sort=FALSE)
+
+names(resdata)[1] <- "Gene"
+
+write.csv(resdata,file="/N/slate/emierdma/GSF2848/results/N2vsadr2diffexp.csv")
