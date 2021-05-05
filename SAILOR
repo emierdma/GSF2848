@@ -1,0 +1,3 @@
+# in Carbonate (not in a directory)
+
+cp /N/slate/emierdma/GSF2848/results/aligned/*Aligned.sortedByCoord.out.bam .
