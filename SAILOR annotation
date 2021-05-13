@@ -1,0 +1,7 @@
+# Create sailor directory on slate
+
+# Transfer files from Carbonate to slate
+# In Carbonate results directory
+
+scp *.bed /N/slate/emierdma/GSF2848/sailor/results
+
