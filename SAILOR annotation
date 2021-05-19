@@ -1,16 +1,29 @@
 # Create sailor directory on slate
 
-# Transfer files from Carbonate to slate
+# Transfer files from Carbonate to sailor directory
 # In Carbonate results directory
 
 scp *.bed /N/slate/emierdma/GSF2848/sailor
 
-# copy WS275 files to carbonate
+# copy WS275 files to sailor directory
 # in Desktop
 
-scp c.elegans.WS275.annotation.final.bed emierdma@carbonate.uits.iu.edu:
-scp c_elegans.PRJNA13758.WS275.canonical_geneset.gtf emierdma@carbonate.uits.iu.edu:
-scp annotator.sailor.py emierdma@carbonate.uits.iu.edu:
-scp create-annnotation-file.py emierdma@carbonate.uits.iu.edu:
-scp annotation.tar.gz emierdma@carbonate.uits.iu.edu:
+scp c.elegans.WS275.annotation.final.bed emierdma@carbonate.uits.iu.edu:/N/slate/emierdma/GSF2848/sailor
 
+scp c_elegans.PRJNA13758.WS275.canonical_geneset.gtf emierdma@carbonate.uits.iu.edu:/N/slate/emierdma/GSF2848/sailor
+
+scp annotator.sailor.py emierdma@carbonate.uits.iu.edu:/N/slate/emierdma/GSF2848/sailor
+
+# in slate sailor directory
+
+conda install -c bioconda pybedtools
+
+y
+
+# run annotation
+
+python3 annotator.sailor.py -h
+
+python3 annotator.sailor.py --gtf c_elegans.PRJNA13758.WS275.canonical_geneset.gtf --fwd GSF2848-EE-adr-2.merged.fwd.sorted.rmdup.readfiltered.formatted.varfiltered.snpfiltered.ranked.bed --rev GSF2848-EE-adr-2.merged.rev.sorted.rmdup.readfiltered.formatted.varfiltered.snpfiltered.ranked.bed --wb c.elegans.WS275.annotation.final.bed --o /N/slate/emierdma/GSF2848/sailor/adr-2.annotated.sites.csv
+
+python3 annotator.sailor.py --gtf c_elegans.PRJNA13758.WS275.canonical_geneset.gtf --fwd GSF2848-EE-N2.merged.fwd.sorted.rmdup.readfiltered.formatted.varfiltered.snpfiltered.ranked.bed  --rev GSF2848-EE-N2.merged.rev.sorted.rmdup.readfiltered.formatted.varfiltered.snpfiltered.ranked.bed  --wb c.elegans.WS275.annotation.final.bed --o /N/slate/emierdma/GSF2848/sailor/N2.annotated.sites.csv
