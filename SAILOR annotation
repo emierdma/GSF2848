@@ -3,5 +3,14 @@
 # Transfer files from Carbonate to slate
 # In Carbonate results directory
 
-scp *.bed /N/slate/emierdma/GSF2848/sailor/results
+scp *.bed /N/slate/emierdma/GSF2848/sailor
+
+# copy WS275 files to carbonate
+# in Desktop
+
+scp c.elegans.WS275.annotation.final.bed emierdma@carbonate.uits.iu.edu:
+scp c_elegans.PRJNA13758.WS275.canonical_geneset.gtf emierdma@carbonate.uits.iu.edu:
+scp annotator.sailor.py emierdma@carbonate.uits.iu.edu:
+scp create-annnotation-file.py emierdma@carbonate.uits.iu.edu:
+scp annotation.tar.gz emierdma@carbonate.uits.iu.edu:
 
