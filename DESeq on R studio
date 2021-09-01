@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Open R studio on ThinLinc
 # Using Console, load tidyverse
 
