@@ -1,0 +1,31 @@
+#Enter slate directory
+
+cd /N/slate/emierdma
+
+#create GSF2848 directory
+
+mkdir GSF2848
+
+#create rnaseq environment (only need to do this once)
+
+conda create -n rnaseq -c conda-forge -c bioconda entrez-direct sra-tools==2.6.9 fastqc seqtk star samtools subread
+
+#activate environment
+
+conda activate rnaseq
+
+#navigate to project space
+
+cd /N/project/HundleyLab
+
+#enter GSF2848 directory
+
+cd GSF2848
+
+#copy files to your own GSF2848 directory
+
+scp GSF2848-EE* emierdma@carbonate.uits.iu.edu:/N/slate/emierdma/GSF2848
+
+#navigate back to your directory to start alignment
+
+cd /N/slate/emierdma/GSF2848
