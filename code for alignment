@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# In /N/slate/emierdma/GSF2848
 # Remember to activate your environment.
 
 conda activate rnaseq
