@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Create sailor directory on slate
 
 # Transfer files from Carbonate to sailor directory
