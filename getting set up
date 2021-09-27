@@ -28,6 +28,12 @@ cd GSF2848
 
 scp GSF2848-EE* emierdma@carbonate.uits.iu.edu:/N/slate/emierdma/GSF2848
 
-# navigate back to your directory to start alignment
+# navigate back to your directory
 
 cd /N/slate/emierdma/GSF2848
+
+# unzip files
+
+gunzip GSF2848*
+
+# proceed to alignment
