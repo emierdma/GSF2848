@@ -108,3 +108,7 @@ featureCounts \
   ${BAMS}
   
 done
+
+# look at uniquely mapped reads %
+
+head GSF2848....Log.final.out
