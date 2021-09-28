@@ -57,3 +57,5 @@ resdata <- merge(as.data.frame(res),as.data.frame(counts(dds,normalized=TRUE)),b
 names(resdata)[1] <- "Gene"
 
 write.csv(resdata,file="/N/slate/emierdma/GSF2848/results/N2vsadr2diffexp.csv")
+
+# file can now be found in your results directory
