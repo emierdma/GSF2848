@@ -37,9 +37,7 @@ colnames(countdata)
 countdata <- as.matrix(countdata)
 
 countdata <- countdata[,c("adr2rep1","adr2rep2","adr2rep3","N2rep1","N2rep2","N2rep3")]
-
 (condition <- factor(c(rep("b",3),rep("a",3))))
-
 (coldata <- data.frame(row.names=colnames(countdata),condition))
 
 dds <- DESeqDataSetFromMatrix(countData = countdata,colData = coldata, design=~condition)
