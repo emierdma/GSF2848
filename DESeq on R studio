@@ -34,6 +34,8 @@ colnames(countdata) <- gsub("N2.rep1_S11","N2rep1",colnames(countdata))
 
 colnames(countdata)
 
+# once column names are as you like:
+
 countdata <- as.matrix(countdata)
 
 countdata <- countdata[,c("adr2rep1","adr2rep2","adr2rep3","N2rep1","N2rep2","N2rep3")]
