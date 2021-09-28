@@ -57,3 +57,5 @@ mv ce11_example.yaml N2.yaml
 # run sailor
 
 ./sailor-1.0.4 N2.yaml
+
+#proceed to SAILOR annotation
