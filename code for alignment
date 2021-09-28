@@ -112,3 +112,5 @@ done
 # look at uniquely mapped reads %
 
 head GSF2848....Log.final.out
+
+# proceed to DESeq or SAILOR
