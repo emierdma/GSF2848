@@ -57,3 +57,10 @@ names(resdata)[1] <- "Gene"
 write.csv(resdata,file="/N/slate/emierdma/GSF2848/results/N2vsadr2diffexp.csv")
 
 # file can now be found in your results directory
+
+# move file to desktop
+# in terminal (outside thinlinc)
+
+scp emierdma@carbonate.uits.iu.edu:/N/slate/emierdma/GSF2848/results/N2vsadr2diffecp.csv ~/Desktop
+
+# open file in Excel and analyze
