@@ -1,4 +1,13 @@
 #!/bin/bash
+# in Carbonate- install Miniconda3
+
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+
+bash Miniconda3-latest-Linux-x86_64.sh
+
+# install sra-tools
+
+conda install -c bioconda sra-tools
 
 # Enter slate directory
 
@@ -11,6 +20,8 @@ mkdir GSF2848
 # create rnaseq environment (only need to do this once)
 
 conda create -n rnaseq -c conda-forge -c bioconda entrez-direct sra-tools==2.6.9 fastqc seqtk star samtools subread
+
+# if sra-tools fails, use conda list to figure out what version of sra-tools you have and adjust code accordingly
 
 # activate environment
 
