@@ -16,7 +16,7 @@ scp c_elegans.PRJNA13758.WS275.canonical_geneset.gtf emierdma@carbonate.uits.iu.
 
 scp annotator.sailor.py emierdma@carbonate.uits.iu.edu:/N/slate/emierdma/GSF2848/sailor
 
-# in slate sailor directory
+# in slate sailor directory, install pybedtools (only need to do once)
 
 conda install -c bioconda pybedtools
 
