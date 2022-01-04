@@ -1,11 +1,11 @@
 #!/bin/bash
-# in Carbonate- install Miniconda3
+# in Carbonate- install Miniconda3 (only need to do this once)
 
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 
 bash Miniconda3-latest-Linux-x86_64.sh
 
-# install sra-tools
+# install sra-tools (only need to do this once)
 
 conda install -c bioconda sra-tools
 
