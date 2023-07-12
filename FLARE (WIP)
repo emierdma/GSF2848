@@ -1,0 +1,12 @@
+# Generate stranded bigwig (.bw) files from a bam file.
+#     Note: make sure you are using the correct chrom sizes file for your genome build
+
+#module load samtools
+#module load bedtools
+#module load makebigwigfiles;
+
+# INPUTS:
+
+# This should be the full path to a bam file from which you wish to make stranded bigwigs files.
+input_bam=$1
+samplename=$2
