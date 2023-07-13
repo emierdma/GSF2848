@@ -41,3 +41,8 @@ jq -n '{
   }' > GSF2848.json
 
 #you should now have your .json file in your directory
+#download snakemake file
+wget https://github.com/YeoLab/FLARE/blob/master/workflow_sailor/Snakefile
+
+#run snakefile
+snakemake --snakefile Snakefile --configfile GSF2848.json --verbose --use-singularity     --singularity-args '--bind /home --bind /projects'  -j1
