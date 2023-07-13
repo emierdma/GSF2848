@@ -1,12 +1,43 @@
-# Generate stranded bigwig (.bw) files from a bam file.
-#     Note: make sure you are using the correct chrom sizes file for your genome build
+#Check whether your environment has snakemake installed
+conda list
 
-#module load samtools
-#module load bedtools
-#module load makebigwigfiles;
+# if not, install it
+conda install -c bioconda -c conda-forge snakemake
 
-# INPUTS:
+#make sure singularity is loaded
+module load singularity
 
-# This should be the full path to a bam file from which you wish to make stranded bigwigs files.
-input_bam=$1
-samplename=$2
+#check whether your environment has jq installed
+conda list
+
+#if not, install it 
+conda install -c conda-forge -c bioconda jq
+
+#create .json  file with the following contents:
+      # {
+        "samples_path": "/path/to/aligned/bams/",
+        "samples": [
+          "sample1.sortedByCoord.out.bam",
+          "sample2.sortedByCoord.out.bam",
+          ....,
+          etc.
+        ],
+        "reverse_stranded": true,
+        "reference_fasta": "/path/to/fasta/used/to/align/genome.fa",
+        "known_snps": "/path/to/known/common/snps/file/for/organism/in/chrom/start/end/format/b151_GRCh38p7_common.bed3",
+        "edit_type": "CT", (or "AG", "TC", etc.)
+        "output_dir": "/path/to/output/directory"
+      }
+
+#example:
+jq -n '{ 
+  "samples_path": ".", 
+  "samples": ["GSF2848-EE-N2.merged.bam", "GSF2848-EE-adr-2.merged.bam"], 
+  "reverse_stranded": true, 
+  "reference_fasta": "assembly.fasta", 
+  "known_snps": "c.elegans.WS275.snps.sorted.bed", 
+  "edit_type": "AG", 
+  "output_dir": "." 
+  }' > GSF2848.json
+
+#you should now have your .json file in your directory
