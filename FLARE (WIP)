@@ -1,3 +1,4 @@
+#!/bin/bash
 #Check whether your environment has snakemake installed
 conda list
 
