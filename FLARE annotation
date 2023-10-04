@@ -20,6 +20,4 @@ y
 
 # run annotation
 
-python3 annotator.sailor.py -h
-
 python3 annotator.sailor.py --gtf c_elegans.PRJNA13758.WS275.canonical_geneset.gtf --fwd GSF2848-EE-N2.merged.bam.fwd.readfiltered.formatted.varfiltered.snpfiltered.ranked.bed  --rev GSF2848-EE-N2.merged.bam.rev.readfiltered.formatted.varfiltered.snpfiltered.ranked.bed  --wb c.elegans.WS275.annotation.final.bed --o /N/slate/emierdma/GSF2848/results/flare_results/N2.FLAREannotated.sites.csv
